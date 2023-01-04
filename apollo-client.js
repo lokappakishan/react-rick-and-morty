@@ -6,3 +6,11 @@ const client  = new ApolloClient({
 });
 
 export default client;
+
+/*
+cement :#262C3A
+blue: #12B0C9
+green: #C4DF5A
+black: #000000
+
+*/
