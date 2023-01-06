@@ -14,4 +14,8 @@ body {
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.6;
+  background-color: #262C3A;
+  color: #C4DF5A;
+  -webkit-font-smoothing: antialiased;
+
 }
