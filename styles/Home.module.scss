@@ -8,3 +8,15 @@ Layout
   max-width: 1200px;
   margin: 0 auto; 
 }
+
+.heroSection{
+
+  display: flex;
+  justify-content: space-between;
+
+  .leftSection{
+    width: 45%;
+  }
+  .rightSection{}
+    width: 45%;
+}
