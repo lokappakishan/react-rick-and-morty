@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import { ApolloProvider, gql } from '@apollo/client'
 import App from '../container/App'
 import client from '../apollo-client'

@@ -1,36 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-
-const Navbar = styled.nav`
-
-    ul{
-        border: 1px solid magenta;
-        display: flex;
-        justify-content: center;
-        
-    }
-
-    li{
-        border: 2px dotted orange;
-        list-style: none;
-        margin: 0 1em;
-    }
-
-    a{
-        color: white;
-        text-decoration: none;
-    }
-
-`;
+import headerStyles from '../styles/header.module.scss';
 
 export default function Nav(){
+
+    const router = useRouter();
+    const currentRoute = router.pathname;
+
     return(
-    <Navbar>
+    <nav className={headerStyles.navbar}>
         <ul>
-            <li><Link href='/locations' >LOCATIONS</Link></li>    
-            <li><Link href='/characters' >CHARACTERS</Link></li>
-            <li><Link href='/episodes' >EPISODES</Link></li>
+            <li><Link href='/' className={currentRoute === '/' ? headerStyles.active : headerStyles.nonActive}>Home</Link></li>  
+            <li><Link href='/locations' className={currentRoute === '/locations' ? headerStyles.active : headerStyles.nonActive} >Locations</Link></li>    
+            <li><Link href='/characters' className={currentRoute === '/characters' ? headerStyles.active : headerStyles.nonActive} >Characters</Link></li>
+            <li><Link href='/episodes' className={currentRoute === '/episodes' ? headerStyles.active :headerStyles.nonActive}>Episodes</Link></li>
         </ul>
-    </Navbar>);
+    </nav>);
 }

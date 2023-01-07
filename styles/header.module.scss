@@ -1,0 +1,59 @@
+
+/* ----------------------------------------------------------------
+Navigation Typography
+----------------------------------------------------------------*/
+
+
+/* Specific styles for non-active links */
+.nonActive {
+    color: #C4DF5A;
+}
+
+/* Specific styles for active links */
+.active {
+    color: #C4DF5A;
+    border-bottom: 1px solid #C4DF5A;
+}
+
+/* ----------------------------------------------------------------
+Navigation Layout
+----------------------------------------------------------------*/
+.logo{
+    color: transparent;
+    width: 100px;
+    height: 75px;
+    
+}
+
+.mainHeader{
+    padding: 2em;
+}
+
+.containerNav {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navbar{
+
+    ul {
+            display: flex;
+            justify-content: center;
+    
+        }
+    
+        li {
+            list-style: none;
+            margin: 0 1em;
+            margin-top: 1.25em;
+        }
+    
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            color: #C4DF5A;
+            padding: 0.25em 0;
+        }
+}
