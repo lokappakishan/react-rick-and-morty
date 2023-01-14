@@ -10,17 +10,35 @@ Layout
 }
 
 .heroSection{
-
   display: flex;
   justify-content: space-between;
 
   .leftSection{
     width: 45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h3{
+      font-size: 2rem;
+    }
   }
-  .rightSection{}
+  
+  .rightSection{
     width: 45%;
-}
+    height: 60%;
+    
+
+    img{
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
 
 .heroHeading{
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  }
+
 }
