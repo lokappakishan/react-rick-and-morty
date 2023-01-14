@@ -5,6 +5,7 @@ import Image from "next/image";
 import mypics from '../assets/logo.png';
 import mainStyles from '../styles/Home.module.scss';
 import headerStyles from '../styles/header.module.scss';
+import Hero from "./Hero";
 
 
 export default function Header(){
