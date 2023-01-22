@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 
 const GET_ALL_CHARACTERS = gql`
-    query GetCharacters($page: ID!){
+query GetCharacters($page: Int){
     characters(page: $page){
         info{
             count
@@ -13,13 +13,11 @@ const GET_ALL_CHARACTERS = gql`
         results{
             id
             name
-            status
-            gender
-            image
         }
     }
     
 }
+
 
 `;
 
@@ -28,7 +26,9 @@ const variables = {page:1};
 export default function CharactersPage(){
 
     const {loading,error,data} = useQuery(GET_ALL_CHARACTERS,variables);
-    console.log(data);
+    const  {characters: {info: infoList,results: charactersList}} = data;
+
+    console.log(infoList,charactersList);
 
     return(
     <p>characters Page</p>
