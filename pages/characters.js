@@ -1,5 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
+import Image from "next/image";
 import React from "react";
+import CharacterCard from "../components/CharacterCard";
+import styles from "../styles/Home.module.scss";
 
 const GET_ALL_CHARACTERS = gql`
 query GetCharacters($page: Int){
@@ -13,6 +16,7 @@ query GetCharacters($page: Int){
         results{
             id
             name
+            image
         }
     }
     
@@ -29,15 +33,15 @@ export default function CharactersPage(){
 
     if (error) {
     return <div>Error: {error.message}</div>;
-  }
+    }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  if (!data) {
-    return <div>No data found.</div>;
-  }
+    if (!data) {
+        return <div>No data found.</div>;
+    }
 
 
     const  {characters: {info: infoList,results: charactersList}} = data;
@@ -45,6 +49,15 @@ export default function CharactersPage(){
     console.log(infoList,charactersList);
 
     return(
-    <p>characters Page</p>
+        <div className={`${styles.container}`}>
+            {charactersList.map(function(character){
+                return(
+                    <div key={character.id}>
+                        <Image src={character.image} alt={character.name} width={300} height={300}/>
+                        <p>{character.name}</p>
+                    </div>
+                )
+            })}
+        </div>
     );
 }
