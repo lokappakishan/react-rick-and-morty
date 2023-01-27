@@ -1,20 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Nav from "./Nav";
-import Image from "next/image";
 import mypics from '../assets/logo.png';
-import mainStyles from '../styles/Home.module.scss';
-import headerStyles from '../styles/header.module.scss';
-import Hero from "./Hero";
+import Nav from "./Nav/Nav";
+
 
 
 export default function Header(){
     return(
-    <header className={`${headerStyles.mainHeader}`} >
-    <div className={`${mainStyles.container} ${headerStyles.containerNav}`}>
-            <div className="bar">
+    <header>
+    <div>
+            <div>
                 <Link href={'/'}>
-                    <Image src={mypics} alt="Image" className={headerStyles.logo}/>
+                    <Image src={mypics} alt="Image"/>
                 </Link>
             </div>
         <Nav />

@@ -1,8 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import React from "react";
-import CharacterCard from "../components/CharacterCard";
-import styles from "../styles/Home.module.scss";
+
 
 const GET_ALL_CHARACTERS = gql`
 query GetCharacters($page: Int){
@@ -49,7 +48,7 @@ export default function CharactersPage(){
     console.log(infoList,charactersList);
 
     return(
-        <div className={`${styles.container}`}>
+        <div >
             {charactersList.map(function(character){
                 return(
                     <div key={character.id}>
